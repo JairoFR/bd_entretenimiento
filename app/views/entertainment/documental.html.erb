@@ -1,0 +1,3 @@
+<h1 class="my-5">Lista de Documentales</h1>
+<%= link_to "Nuevo Documental", new_content_path(content_type: "video") %>
+<%= render partial: 'documentales_table', locals: { documentales: @documentales } %>

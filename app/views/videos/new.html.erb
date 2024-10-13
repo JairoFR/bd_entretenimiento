@@ -1,0 +1,38 @@
+<h1 class="my-5 text-center text-dark" style="font-size: 2.5rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">Crea una nueva pelicula</h1>
+<%= form_with model: @documental, url: documentary_films_path, method: :post, local: true, class: "needs-validation", novalidate: true do |form| %>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= form.label :name, "Nombre", class: "form-label" %>
+        <%= form.text_field :name, class: "form-control", required: true, placeholder: "Ingresa el nombre del documental" %>
+        <div class="invalid-feedback">
+          El nombre es obligatorio.
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= form.label :synopsis, "Sinopsis", class: "form-label" %>
+        <%= form.text_area :synopsis, class: "form-control", required: true, placeholder: "Escribe la sinopsis", rows: 4 %>
+        <div class="invalid-feedback">
+          La sinopsis es obligatoria.
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= form.label :director, "Director", class: "form-label" %>
+        <%= form.text_field :director, class: "form-control", required: true, placeholder: "Ingresa el nombre del director" %>
+        <div class="invalid-feedback">
+          El director es obligatorio.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <%= form.submit "Guardar", class: "btn btn-primary w-50" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= link_to "Regresar", videos_path, class: "btn btn-warning btn-lg mt-5 shadow" %>

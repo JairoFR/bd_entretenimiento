@@ -1,0 +1,23 @@
+<section class="container">
+  <%= form_with url: create_content_path, method: :post do |form| %>
+    <div>
+      <%= form.label :content_type, "Tipo de Contenido" %>
+      <%= form.select :content_type, options_for_select([["Video", "video"], ["Serie", "serie"], ["Documental", "documentary_film"]]), { prompt: 'Selecciona un tipo' } %>
+    </div>
+    <div>
+      <%= form.label :name, "Nombre" %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :synopsis, "Sinopsis" %>
+      <%= form.text_area :synopsis %>
+    </div>
+    <div>
+      <%= form.label :director, "Director" %>
+      <%= form.text_field :director %>
+    </div>
+    <div>
+      <%= form.submit "Guardar" %>
+    </div>
+  <% end %>
+</section>

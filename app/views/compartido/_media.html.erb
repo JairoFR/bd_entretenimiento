@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Sinopsis</th>
+        <th>Director</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if media.present? %>
+        <% media.each do |media| %>
+          <tr>
+            <td><%= media.name %></td>
+            <td><%= media.synopsis %></td>
+            <td><%= media.director %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="3">No hay registros disponibles.</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
